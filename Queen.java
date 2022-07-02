@@ -8,7 +8,7 @@ public class Queen {
         int x = 0;
         int y = 0;
         while (x < 8) {
-            x++;
+            
             while (y < 8) {
                 Boolean may = beats(x, y, queen);
                 if (may) {
@@ -26,9 +26,10 @@ public class Queen {
                 }
 
             }
-            return false;
+            x++;
+           
         }
-
+            return false;
     }
 
     public static boolean beats(int x, int y, char[][] queen) {
@@ -75,15 +76,17 @@ public class Queen {
         }
         queen[k][m] = 'Q';
         // System.out.println(Arrays.deepToString(queen));
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; j < size; j++) {
-                System.out.print(" " + queen[i][j] + " ");
-            }
-            System.out.println();
-        }
+        // for (int i = 0; i < size; i++) {
+        //     for (int j = 0; j < size; j++) {
+        //         System.out.print(" " + queen[i][j] + " ");
+        //     }
+        //     System.out.println();
+        // }
 
+
+        Queen ob=new Queen();
         int count = 1;
-        placement(queen, count);
+        ob.placement(queen, count);
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 System.out.print(" " + queen[i][j] + " ");
